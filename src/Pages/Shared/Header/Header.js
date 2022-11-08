@@ -22,9 +22,24 @@ const Header = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <li><Link to='/services'>Services</Link></li>
-                        <li><Link to='/signIn'>Sign In</Link></li>
-                        <li>{user?.displayName}</li>
+                        {
+                            user?.email ?
+                                <>
+                                    <li><Link to='/services'>Services</Link></li>
+                                    <li><Link to='/services'>My Reviews</Link></li>
+                                    <li><Link to='/services'>Blogs</Link></li>
+                                    <li className='my-auto'><button>Sign Out</button></li>
+
+                                </>
+                                :
+                                <>
+                                    <li><Link to='/services'>Services</Link></li>
+                                    <li><Link to='/services'>Blogs</Link></li>
+                                    <li><Link to='/signIn'>Sign In</Link></li>
+                                    <li>{user?.displayName}</li>
+                                </>
+                        }
+
                     </ul>
                 </div>
 
