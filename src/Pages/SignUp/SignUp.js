@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext)
+
+    const handleSignUp = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+            })
+            .catch(err => {
+                console.error(err)
+                form.reset();
+            });
+    }
+
     return (
         <div>
             <section className="bg-gray-900">
@@ -14,21 +35,21 @@ const SignUp = () => {
                             <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
                                 Create your account
                             </h1>
-                            <form className="space-y-4 md:space-y-6" action="#">
+                            <form onSubmit={handleSignUp} className="space-y-4 md:space-y-6" action="#">
                                 <div>
-                                    <label for="name" className="block mb-2 text-sm font-medium text-white">Your Name</label>
+                                    <label htmlFor="name" className="block mb-2 text-sm font-medium text-white">Your Name</label>
                                     <input type="text" name="name" id="name" className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Your Name" required="" />
                                 </div>
                                 <div>
-                                    <label for="email" className="block mb-2 text-sm font-medium text-white">Your email</label>
+                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">Your email</label>
                                     <input type="email" name="email" id="email" className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="name@gmail.com" required="" />
                                 </div>
                                 <div>
-                                    <label for="email" className="block mb-2 text-sm font-medium text-white">Photo URL</label>
+                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">Photo URL</label>
                                     <input type="link" name="photoURL" id="PhotoURL" className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Photo URL" required="" />
                                 </div>
                                 <div>
-                                    <label for="password" className="block mb-2 text-sm font-medium text-white">Password</label>
+                                    <label htmlFor="password" className="block mb-2 text-sm font-medium text-white">Password</label>
                                     <input type="password" name="password" id="password" placeholder="••••••••" className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" required="" />
                                 </div>
 
