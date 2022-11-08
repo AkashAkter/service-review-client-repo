@@ -12,17 +12,16 @@ const Header = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link>Services</Link></li>
-                            <li><a>Item 2</a></li>
-                            <li><a>Item 3</a></li>
+                            <li><Link>Login</Link></li>
+
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">daisyUI</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
-                        <li><a>Item 3</a></li>
+                        <li><Link to='/services'>Services</Link></li>
+                        <li><Link to='/signIn'>Sign In</Link></li>
                     </ul>
                 </div>
 
