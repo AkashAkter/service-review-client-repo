@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServiceDetails = () => {
 
@@ -9,12 +11,16 @@ const ServiceDetails = () => {
         <div>
 
             {/* SERVICE SECTION STARTS HERE*/}
-            <section>
+            <section className='m-28'>
 
-                <div class="lg:flex justify-evenly m-20 text-white shadow-2xl p-20">
+                <div class="lg:flex justify-evenly text-white shadow-2xl p-10">
 
                     <div class="lg:w-1/2">
-                        <img className='rounded-3xl' src={service.image} alt="" />
+                        <PhotoProvider>
+                            <PhotoView src={service.image}>
+                                <img src={service.image} alt="Shoes" className="rounded-3xl " />
+                            </PhotoView>
+                        </PhotoProvider>
                         <p className='text-center text-2xl mt-8'>PRICE: ${service.price}</p>
                     </div>
 
@@ -23,6 +29,12 @@ const ServiceDetails = () => {
                         <p className='m-5 text-justify'>{service.details}</p>
                     </div>
 
+                </div>
+
+                <div>
+                    <h1>More Photos</h1>
+                    <div className='grid grid-cols-3 lg:grid-cols-3'>
+                    </div>
                 </div>
 
             </section>

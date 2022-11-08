@@ -1,15 +1,20 @@
-import React, { useContext } from 'react';
+
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext)
+
+    const { createUser } = useContext(AuthContext);
 
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value
+        const photoURL = form.photoURL.value
         const email = form.email.value;
         const password = form.password.value;
+        console.log(name, photoURL, email, password);
 
         createUser(email, password)
             .then(result => {
@@ -45,7 +50,7 @@ const SignUp = () => {
                                     <input type="email" name="email" id="email" className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="name@gmail.com" required="" />
                                 </div>
                                 <div>
-                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">Photo URL</label>
+                                    <label htmlFor="photoURL" className="block mb-2 text-sm font-medium text-white">Photo URL</label>
                                     <input type="link" name="photoURL" id="PhotoURL" className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Photo URL" required="" />
                                 </div>
                                 <div>
