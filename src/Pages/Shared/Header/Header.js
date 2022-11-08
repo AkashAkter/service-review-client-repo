@@ -26,14 +26,14 @@ const Header = () => {
                                         <li><Link to='/services'>Services</Link></li>
                                         <li><Link to='/addServices'>Add Service</Link></li>
                                         <li><Link to='/myReviews'>My Reviews</Link></li>
-                                        <li><Link to='/services'>Blogs</Link></li>
+                                        <li><Link to='/blogs'>Blogs</Link></li>
                                         <li className='my-auto'><button onClick={handleLogOut}>Sign Out</button></li>
 
                                     </>
                                     :
                                     <>
                                         <li><Link to='/services'>Services</Link></li>
-                                        <li><Link to='/services'>Blogs</Link></li>
+                                        <li><Link to='/blogs'>Blogs</Link></li>
                                         <li><Link to='/signIn'>Sign In</Link></li>
                                         <li>{user?.displayName}</li>
                                     </>
@@ -50,14 +50,14 @@ const Header = () => {
                                     <li><Link to='/services'>Services</Link></li>
                                     <li><Link to='/addServices'>Add Service</Link></li>
                                     <li><Link to='/myReviews'>My Reviews</Link></li>
-                                    <li><Link to='/services'>Blogs</Link></li>
+                                    <li><Link to='/blogs'>Blogs</Link></li>
                                     <li className='my-auto'><button onClick={handleLogOut}>Sign Out</button></li>
 
                                 </>
                                 :
                                 <>
                                     <li><Link to='/services'>Services</Link></li>
-                                    <li><Link to='/services'>Blogs</Link></li>
+                                    <li><Link to='/blogs'>Blogs</Link></li>
                                     <li><Link to='/signIn'>Sign In</Link></li>
                                     <li>{user?.displayName}</li>
                                 </>
