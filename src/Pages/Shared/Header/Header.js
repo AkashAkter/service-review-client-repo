@@ -41,7 +41,7 @@ const Header = () => {
                             }
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">Fast Shutter</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">

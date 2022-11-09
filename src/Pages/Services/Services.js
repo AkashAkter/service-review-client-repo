@@ -13,7 +13,7 @@ const Services = () => {
     return (
         <div className='m-32' >
             <div>
-                <h1>Our Services</h1>
+                <h1 className='text-center text-3xl font-extrabold text-white'>Our Services</h1>
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2'>
                 {
@@ -36,7 +36,7 @@ const Services = () => {
             {
                 location.pathname === '/' ?
                     (
-                        <Link to='/services'><button className='btn '>See All</button></Link>
+                        <Link to='/services'><button className='btn btn-block mx-auto'>See All</button></Link>
                     )
                     :
                     (

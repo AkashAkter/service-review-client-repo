@@ -7,7 +7,7 @@ const Reviews = ({ review, handleDelete }) => {
 
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-2xl image-full">
+            <div className="card w-96 bg-base-100 shadow-2xl shadow-indigo-400/20 image-full">
                 <figure><img className='w-full' src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className='text-xs'>{serviceName}</h2>

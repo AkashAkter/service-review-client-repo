@@ -21,7 +21,7 @@ const ServiceDetails = () => {
             {/* SERVICE SECTION STARTS HERE*/}
             <section className='m-28'>
 
-                <div className="lg:flex justify-evenly text-white shadow-2xl p-10">
+                <div className="lg:flex justify-evenly text-white shadow-2xl shadow-indigo-400/100 py-28 p-10">
 
                     <div className="lg:w-1/2">
                         <PhotoProvider>
@@ -29,12 +29,12 @@ const ServiceDetails = () => {
                                 <img src={service.image} alt="Shoes" className="rounded-3xl " />
                             </PhotoView>
                         </PhotoProvider>
-                        <p className='text-center text-2xl mt-8'>PRICE: ${service.price}</p>
                     </div>
 
                     <div className="lg:w-1/2">
-                        <h1 className='text-center text-3xl'>{service.name}</h1>
+                        <h1 className='text-center text-3xl'>{service.serviceName}</h1>
                         <p className='m-5 text-justify'>{service.details}</p>
+                        <p className='text-center text-2xl mt-8'>PRICE: ${service.price}</p>
                     </div>
 
                 </div>
