@@ -9,7 +9,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const ServiceDetails = () => {
 
     const { user } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
 
     const service = useLoaderData();
     // console.log(service.more_images);

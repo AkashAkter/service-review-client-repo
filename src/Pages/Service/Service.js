@@ -4,6 +4,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 const Service = ({ service }) => {
+
     const { _id, image, serviceName, details } = service
     return (
         <div>
@@ -18,7 +19,7 @@ const Service = ({ service }) => {
                 </figure>
                 <div className="card-body items-center">
                     <h2 className="card-title">{serviceName}</h2>
-                    <p>{details}</p>
+                    <p>{details.slice(0, 100)}</p>
                     <div className="card-actions">
                         <Link to={`/services/${_id}`}><button className="btn">View Details</button></Link>
                     </div>

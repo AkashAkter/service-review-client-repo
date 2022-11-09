@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Service from '../Service/Service';
 
 const Services = () => {
+    const location = useLocation();
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/services')
@@ -16,14 +17,33 @@ const Services = () => {
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2'>
                 {
-                    services.map(service => <Service
-                        key={service._id}
-                        service={service}
-                    ></Service>)
+                    location.pathname === '/' ?
+                        (
+                            services.slice(0, 3).map(service => <Service
+                                key={service._id}
+                                service={service}
+                            ></Service>)
+                        )
+                        :
+                        (
+                            services.map(service => <Service
+                                key={service._id}
+                                service={service}
+                            ></Service>)
+                        )
                 }
             </div>
+            {
+                location.pathname === '/' ?
+                    (
+                        <Link to='/services'><button className='btn '>See All</button></Link>
+                    )
+                    :
+                    (
+                        <></>
+                    )
+            }
 
-            <Link to='/services'><button className='btn'>See All</button></Link>
         </div>
     );
 };
