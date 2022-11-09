@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const AddReview = () => {
 
-    const { _id, name } = useLoaderData();
+    const { _id, name, image } = useLoaderData();
     // console.log(name);
 
     const { user } = useContext(AuthContext);
@@ -23,6 +23,7 @@ const AddReview = () => {
             reviewer: fullName,
             email,
             photoURL,
+            image,
             details
         }
 

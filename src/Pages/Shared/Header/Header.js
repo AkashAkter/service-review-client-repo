@@ -27,6 +27,7 @@ const Header = () => {
                                         <li><Link to='/addServices'>Add Service</Link></li>
                                         <li><Link to='/myReviews'>My Reviews</Link></li>
                                         <li><Link to='/blogs'>Blogs</Link></li>
+
                                         <li className='my-auto'><button onClick={handleLogOut}>Sign Out</button></li>
 
                                     </>
@@ -51,6 +52,7 @@ const Header = () => {
                                     <li><Link to='/addServices'>Add Service</Link></li>
                                     <li><Link to='/myReviews'>My Reviews</Link></li>
                                     <li><Link to='/blogs'>Blogs</Link></li>
+                                    <li>{user.email}</li>
                                     <li className='my-auto'><button onClick={handleLogOut}>Sign Out</button></li>
 
                                 </>
