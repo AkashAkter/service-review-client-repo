@@ -1,11 +1,15 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import ReviewsSection from '../ReviewsSection/ReviewsSection';
 import AddReview from '../AddReview/AddReview';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const ServiceDetails = () => {
+
+    const { user } = useContext(AuthContext);
+    console.log(user);
 
     const service = useLoaderData();
     // console.log(service.more_images);
@@ -55,10 +59,23 @@ const ServiceDetails = () => {
 
             {/* REVIEW SECTION STARTS HERE*/}
             <section>
-                <ReviewsSection></ReviewsSection>
-                <AddReview
+                <ReviewsSection
 
-                ></AddReview>
+                ></ReviewsSection>
+                {
+                    user?.email ?
+                        <AddReview></AddReview>
+                        :
+                        <>
+                            <div className='text-center text-white text-2xl my-10 font-bold'>
+                                <h1>For Add Your Own Review <br /> Please Login
+                                    <Link to='/signIn'><span className='text-blue-500 hover:underline'> Here</span></Link>
+                                </h1>
+                            </div>
+
+                        </>
+                }
+
             </section>
             {/* REVIEW SECTION ENDS HERE*/}
         </div>

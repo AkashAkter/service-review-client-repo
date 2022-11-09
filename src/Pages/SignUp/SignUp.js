@@ -1,10 +1,12 @@
 
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
-const SignUp = () => {
 
+const SignUp = () => {
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
     const { createUser } = useContext(AuthContext);
 
     const handleSignUp = event => {
@@ -21,18 +23,23 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setError('');
+                navigate('/');
             })
             .catch(err => {
-                console.error(err)
+                console.error(err);
+                setError(err.message);
+                alert(err);
                 form.reset();
-            });
+            })
+
     }
 
     return (
         <div>
             <section className="bg-gray-900">
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                    <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-white">
+                    <a href="/" className="flex items-center mb-6 text-2xl font-semibold text-white">
                         Welcome
                     </a>
                     <div className="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 border-gray-700">
