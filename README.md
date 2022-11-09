@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Makes a Service and Review Based Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## I have done this work in this project
+* Makes a react project for Client site
+* makes a server site project where I have created some course details
+* installed react-router firebase
+* used tailwind framework
+* taken react icons
+* created firebase 
+* Login, Register section created
 
-## Available Scripts
+# Live Site Link : 
 
-In the project directory, you can run:
+## Main Requirements
+* The homepage will have a Navbar, a slider/banner/ a meaningful section. Under the navbar, display a list of services. There will be at least 6 services in the database, but here, you will limit the number to only 3 i.e. on the home page, you will show maximum of 3 services (this should be done in the backend). Also, add a meaningful footer.
 
-### `npm start`
+* There will be a " see all" button/icon under the 3 services. When clicking the button/icon, take the user to the /services route and show all the services on that page.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Add two extra sections on the home page. Make sure it is unique and relevant to your website.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* The services of the home page and the services of the services page will have the name of the service, image, rating(optional), price, a short description(maximum 100 characters), and a view details button with each service card.
 
-### `npm test`
+* When clicking on the image of the service, the picture will be viewed on full screen. Explore the package react-photo-view for that.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* On clicking the view details button, the user will be taken to the service details page: /services/:id route
 
-### `npm run build`
+* The service details route will have two sections.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* 7.1. Service section:- show all the details of that Service with full description.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* 7.2. Review section:- there will be a review section where a user can see others' reviews of that service. A review should contain a text, name, and image of the reviewer, rating(optional). The user can also add his/her own review for that service. But he needs to log in first. If the user is not logged in(use conditional rendering), show a text like: Please login to add a review. After clicking the login button/link, take him to the login page. Otherwise, show a form with a text area and a button to add his review(rating is optional). Please store the user info (email, etc.) and service info (service id, etc.) with each review to display the reviews correctly with the relevant service.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Implement email/password-based authentication and at least one social login(google, Facebook, GitHub, etc.) authentication. Please skip the email verification part here, because it will create some inconvenience for the examiner. It is important for the examiner to be able to check your authentication without any hassle. If you want, you can add email verification after getting the assignment result.
 
-### `npm run eject`
+* Once a user is logged in, he/she will see more options like My reviews, Add service, and the logout button in the navbar.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* The "My reviews" page will be a private route and show only the reviews that the current user added either in a table or in cards with relevant information like - service name, review etc. There will be two buttons/icons - edit review(details in the bonus part) and delete review with each review. On clicking the delete button/icon, you have to delete the review, and it won't show up on that service page anymore. When the delete is successful, a toast/modal with a message will pop up to inform the user. If the user doesn't add any review, the page will show 'No reviews were added' at the middle of the page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* On the "Add service" page(also a private route), you can add a service and that service will be shown on the home page. When the service is added successfully, a toast/modal with a message will pop up to inform the user.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* No Fake data (data must be hosted on the database). The database could be MongoDB or any other NoSQL database.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Add one more public route: Blogs. You will have to answer the following questions on the Blog page
 
-## Learn More
+* Difference between SQL and NoSQL
+* What is JWT, and how does it work?
+* What is the difference between javascript and NodeJS?
+* How does NodeJS handle multiple requests at the same time?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Bonus Requirements
+* Your Readme file for the client-side repo should have details about your project's features and functionalities in bullet points(at least five bullet points) and your live link. Adding a meaningful readme file for the server-side repo is optional.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* At least 15 meaningful GitHub commits for the client-side and 8 meaningful commits for the server-side repository.
 
-### Code Splitting
+* Your code should be clean and organized. Comments should be added where necessary
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* The title of the page will change with the page you visit. It should not be the same for every route
 
-### Analyzing the Bundle Size
+* Add a meaningful favicon
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Add a spinner on the services page, and the login and register page. If data is loading, a spinner will be displayed.
 
-### Making a Progressive Web App
+* use the Environment Environment variable on both the client (firebase config) and server-side (mongodb credentials, Access token secret). Use .gitignore file on the server side.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Implement the basic version of the JWT token for email/password-based authentication. Upon login, you will create a jwt token and store it on the client side, and for the "My reviews" page, you will send the token and verify the user. Implementing 401 and 403 is optional.
 
-### Advanced Configuration
+* In the "My reviews" page, clicking the edit review button/icon shows that review in a modal/in a new route and lets the user update it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Simple challenge In the service details page, sort the reviews in a descending order by inserting time(you have to keep the inserting time when you add a review, you can do it with the Date object, or you can explore MongoDB documentation). You will have to implement this code on the server side.
