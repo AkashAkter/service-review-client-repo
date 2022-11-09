@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const ReviewsSection = () => {
     const { user } = useContext(AuthContext);
 
-    const [reviews, setReview] = useState({});
+    const [reviews, setReview] = useState([]);
 
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const ReviewsSection = () => {
             .then(data => setReview(data))
     }, [user?.email])
 
-    console.log(reviews);
+    // console.log(reviews);
     return (
         <div>
 

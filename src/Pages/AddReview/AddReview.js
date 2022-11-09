@@ -52,7 +52,7 @@ const AddReview = () => {
             <form onSubmit={handleAddReview} className="space-y-4 md:space-y-6 px-20 py-12">
                 <div>
                     <label htmlFor="fullName" className="block mb-2 text-sm font-medium text-white">Your Name</label>
-                    <input type="text" name="namfullNamee" id="fullName" className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Name" required="" />
+                    <input type="text" name="fullName" id="fullName" className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Name" required="" />
                 </div>
                 <div>
                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">Your email</label>
