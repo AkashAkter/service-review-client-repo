@@ -2,11 +2,13 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import ReviewsSection from '../ReviewsSection/ReviewsSection';
+import AddReview from '../AddReview/AddReview';
 
 const ServiceDetails = () => {
 
     const service = useLoaderData();
-    console.log(service.more_images);
+    // console.log(service.more_images);
     const { img1, img2, img3, img4, img5, img6 } = service.more_images;
 
     return (
@@ -53,7 +55,10 @@ const ServiceDetails = () => {
 
             {/* REVIEW SECTION STARTS HERE*/}
             <section>
+                <ReviewsSection></ReviewsSection>
+                <AddReview
 
+                ></AddReview>
             </section>
             {/* REVIEW SECTION ENDS HERE*/}
         </div>
