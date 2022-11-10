@@ -12,13 +12,13 @@ const Service = ({ service }) => {
                 <figure className="px-10 pt-10">
                     <PhotoProvider>
                         <PhotoView src={image}>
-                            <img src={image} alt="Shoes" className="rounded-xl " />
+                            <img src={image} alt="Shoes" className="shadow-indigo-400/20 h-40 w-60 rounded-xl" />
                         </PhotoView>
                     </PhotoProvider>
                 </figure>
                 <div className="card-body items-center">
                     <h2 className="card-title">{serviceName}</h2>
-                    <p className='text-justify'>{details.slice(0, 100)}</p>
+                    <p className='text-justify'>{details.slice(0, 100)}...</p>
 
                     <p className='text-2xl'>Price : <span className=''>${price}</span></p>
 

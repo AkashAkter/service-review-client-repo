@@ -1,27 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../contexts/AuthProvider';
+import React from 'react';
 
-const ReviewsSection = () => {
-    const { user } = useContext(AuthContext);
-    const [reviews, setReview] = useState([]);
-
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }, [user?.email])
-
-    console.log(reviews);
+const ReviewsSection = ({ review }) => {
+    // console.log(review.reviewer);
+    // console.log(review);
+    const { reviewer, photoURL, details } = review;
     return (
-        <div>
-            {
-                reviews.map(review => <>
-                    <div>
-                        <h1>{review.serviceName}</h1>
-                    </div>
-                </>)
-            }
+        <div className='bg-gray-900	text-center	text-white rounded-2xl p-10'>
+            <div className=''>
+                <img className='mx-auto h-10 w-10 rounded-full' src={photoURL} alt="" />
+                <h1 className='text-xl font-semibold my-4'>{reviewer}</h1>
+            </div>
+            <p>{details}</p>
         </div>
     );
 };

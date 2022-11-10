@@ -13,7 +13,7 @@ const MyReviews = () => {
     const [reviews, setReview] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user.email}`, {
+        fetch(`https://service-review-server-site-xi.vercel.app/reviews?email=${user.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -25,7 +25,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are You Sure?');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://service-review-server-site-xi.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -40,7 +40,7 @@ const MyReviews = () => {
         }
     }
 
-    console.log(reviews);
+    // console.log(reviews);
 
     return (
         <div>

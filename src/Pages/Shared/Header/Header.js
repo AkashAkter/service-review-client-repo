@@ -8,7 +8,7 @@ const Header = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => { localStorage.removeItem('token') })
             .catch(error => console.error(error))
     }
     return (
@@ -52,12 +52,6 @@ const Header = () => {
                                     <li><Link to='/myReviews'>My Reviews</Link></li>
                                     <li><Link to='/blogs'>Blogs</Link></li>
                                     <li className='my-auto'><button onClick={handleLogOut}>Sign Out</button></li>
-                                    {
-                                        user?.photoURL ?
-                                            <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
-                                            :
-                                            <img className='w-10 h-10 rounded-full' src="https://icon2.cleanpng.com/20180319/row/kisspng-computer-icons-google-account-user-profile-iconfin-png-icons-download-profile-5ab0301d8907a6.3404305715214960935613.jpg" alt="" />
-                                    }
                                 </>
                                 :
                                 <>

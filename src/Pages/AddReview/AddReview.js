@@ -10,7 +10,7 @@ const AddReview = () => {
     useTitle('AddReview');
 
     const { _id, serviceName, image } = useLoaderData();
-    console.log(serviceName, image);
+    // console.log(serviceName, image);
 
     const { user } = useContext(AuthContext);
 
@@ -22,6 +22,8 @@ const AddReview = () => {
         const photoURL = user?.photoURL || 'https://i.ibb.co/HNpq6nx/image.png';
         const details = `${form.details.value}`;
 
+        // console.log(photoURL);
+
         const review = {
             service: _id,
             serviceName,
@@ -32,7 +34,7 @@ const AddReview = () => {
             details
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://service-review-server-site-xi.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +47,7 @@ const AddReview = () => {
                 if (data.acknowledged) {
                     alert('Review Done');
                     form.reset();
-                    navigate('/services');
+                    navigate(`/services/${_id}`);
                 }
             })
             .catch(e => console.error(e))

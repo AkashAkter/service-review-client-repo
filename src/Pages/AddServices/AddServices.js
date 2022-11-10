@@ -16,7 +16,7 @@ const AddServices = () => {
         const form = event.target;
         const name = `${form.name.value}`;
         const price = `${form.price.value}`;
-        const image = user?.image || 'https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg';
+        const image = `${form.image.value}`;
         const details = `${form.details.value}`;
 
         const review = {
@@ -26,7 +26,7 @@ const AddServices = () => {
             price
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://service-review-server-site-xi.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,9 +35,9 @@ const AddServices = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.acknowledged) {
-                    alert('Review Done');
+                    alert('Service Added');
                     form.reset();
                     navigate('/services');
                 }
