@@ -4,12 +4,12 @@
 * Makes a react project for Client site
 * makes a server site project where I have created some course details
 * installed react-router firebase
-* used tailwind framework
+* used tailwind framework (Daisy Ui)
 * taken react icons
 * created firebase 
 * Login, Register section created
 
-# Live Site Link : 
+# Live Site Link : https://service-review-2b58a.web.app/
 
 ## Main Requirements
 * The homepage will have a Navbar, a slider/banner/ a meaningful section. Under the navbar, display a list of services. There will be at least 6 services in the database, but here, you will limit the number to only 3 i.e. on the home page, you will show maximum of 3 services (this should be done in the backend). Also, add a meaningful footer.
