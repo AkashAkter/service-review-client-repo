@@ -20,8 +20,7 @@ const Service = ({ service }) => {
                     <h2 className="card-title">{serviceName}</h2>
                     <p className='text-justify'>{details.slice(0, 100)}</p>
 
-
-                    <p className='text-2xl'>Price : <span>${price}</span></p>
+                    <p className='text-2xl'>Price : <span className=''>${price}</span></p>
 
                     <Link to={`/services/${_id}`}><button className="btn">View Details</button></Link>
 

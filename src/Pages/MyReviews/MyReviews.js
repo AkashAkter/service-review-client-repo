@@ -40,7 +40,7 @@ const MyReviews = () => {
         }
     }
 
-    // console.log(reviews);
+    console.log(reviews);
 
     return (
         <div>
@@ -52,7 +52,7 @@ const MyReviews = () => {
                     :
                     <div className='grid lg:grid-cols-2 justify-items-center gap-10 my-20 lg:mx-48'>
                         {
-                            reviews.map(review => <Reviews
+                            [...reviews].reverse().map(review => <Reviews
                                 key={review._id}
                                 review={review}
                                 handleDelete={handleDelete}

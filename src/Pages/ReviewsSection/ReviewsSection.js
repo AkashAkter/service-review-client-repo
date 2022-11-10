@@ -7,12 +7,12 @@ const ReviewsSection = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?service=${reviews.service}`)
+        fetch(`http://localhost:5000/reviews`)
             .then(res => res.json())
             .then(data => console.log(data))
     }, [user?.email])
 
-    // console.log(reviews);
+    console.log(reviews);
     return (
         <div>
             {
