@@ -27,7 +27,6 @@ const Header = () => {
                                         <li><Link to='/addServices'>Add Service</Link></li>
                                         <li><Link to='/myReviews'>My Reviews</Link></li>
                                         <li><Link to='/blogs'>Blogs</Link></li>
-
                                         <li className='my-auto'><button onClick={handleLogOut}>Sign Out</button></li>
 
                                     </>
@@ -36,7 +35,7 @@ const Header = () => {
                                         <li><Link to='/services'>Services</Link></li>
                                         <li><Link to='/blogs'>Blogs</Link></li>
                                         <li><Link to='/signIn'>Sign In</Link></li>
-                                        <li>{user?.displayName}</li>
+
                                     </>
                             }
                         </ul>
@@ -52,16 +51,19 @@ const Header = () => {
                                     <li><Link to='/addServices'>Add Service</Link></li>
                                     <li><Link to='/myReviews'>My Reviews</Link></li>
                                     <li><Link to='/blogs'>Blogs</Link></li>
-                                    <li>{user.email}</li>
                                     <li className='my-auto'><button onClick={handleLogOut}>Sign Out</button></li>
-
+                                    {
+                                        user?.photoURL ?
+                                            <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+                                            :
+                                            <img className='w-10 h-10 rounded-full' src="https://icon2.cleanpng.com/20180319/row/kisspng-computer-icons-google-account-user-profile-iconfin-png-icons-download-profile-5ab0301d8907a6.3404305715214960935613.jpg" alt="" />
+                                    }
                                 </>
                                 :
                                 <>
                                     <li><Link to='/services'>Services</Link></li>
                                     <li><Link to='/blogs'>Blogs</Link></li>
                                     <li><Link to='/signIn'>Sign In</Link></li>
-                                    <li>{user?.displayName}</li>
                                 </>
                         }
 

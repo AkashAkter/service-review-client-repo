@@ -1,8 +1,13 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const AddReview = () => {
+
+    const navigate = useNavigate();
+
+    useTitle('AddReview');
 
     const { _id, serviceName, image } = useLoaderData();
     console.log(serviceName, image);
@@ -40,6 +45,7 @@ const AddReview = () => {
                 if (data.acknowledged) {
                     alert('Review Done');
                     form.reset();
+                    navigate('/services');
                 }
             })
             .catch(e => console.error(e))

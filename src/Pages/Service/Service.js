@@ -19,17 +19,15 @@ const Service = ({ service }) => {
                 <div className="card-body items-center">
                     <h2 className="card-title">{serviceName}</h2>
                     <p className='text-justify'>{details.slice(0, 100)}</p>
-                    <div className="flex justify-between">
-                        <div>
-                            <p className='text-2xl'>${price}</p>
-                        </div>
-                        <div>
-                            <Link to={`/services/${_id}`}><button className="btn">View Details</button></Link>
-                        </div>
-                    </div>
+
+
+                    <p className='text-2xl'>Price : <span>${price}</span></p>
+
+                    <Link to={`/services/${_id}`}><button className="btn">View Details</button></Link>
+
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

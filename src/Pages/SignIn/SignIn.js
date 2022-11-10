@@ -3,8 +3,11 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const SignIn = () => {
+
+    useTitle('SignIn');
 
     const [error, setError] = useState('');
     const location = useLocation();
@@ -26,9 +29,33 @@ const SignIn = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                console.log(currentUser);
+
                 form.reset();
                 setError('');
+
+                //getting JWT TOEKN
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('token', data.token);
+                    })
+
+
+
                 navigate(from, { replace: true });
             })
             .catch(err => {
@@ -45,7 +72,7 @@ const SignIn = () => {
             .then(res => {
                 const user = res.user;
                 console.log(user);
-                navigate('/services');
+                navigate(from, { replace: true });
             })
             .catch(e => console.error(e))
     }

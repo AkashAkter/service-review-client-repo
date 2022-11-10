@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import Service from '../Service/Service';
 
 const Services = () => {
+
+    useTitle('Services');
+
     const location = useLocation();
     const [services, setServices] = useState([]);
     useEffect(() => {

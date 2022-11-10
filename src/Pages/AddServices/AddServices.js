@@ -1,6 +1,10 @@
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const AddServices = () => {
+
+    useTitle('AddService');
+
     return (
         <div>
             <div className='bg-gray-900 m-12 p-12 lg:mx-80 rounded-3xl shadow-2xl shadow-indigo-400/20'>

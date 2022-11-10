@@ -14,7 +14,7 @@ const Comment = () => {
                             <input type="text" placeholder="ADD COMMENT" className="input text-center bg-white input-bordered input-success h-40 w-96 max-w-xs rounded-3xl shadow-2xl shadow-indigo-500/100" />
                         </div>
                         <div className='mt-8'>
-                            <button class="bg-cyan-500 shadow-lg shadow-cyan-500/100 btn btn-block">Subscribe</button>
+                            <button className="bg-cyan-400 text-black hover:bg-sky-400 shadow-lg shadow-cyan-500/100 btn btn-block">Subscribe</button>
                         </div>
                     </div>
 
